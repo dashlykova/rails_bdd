@@ -10,4 +10,5 @@ When("I visit the site") do
     table.hashes.each do |article|
       Article.create!(article)
     end
+  
 end
