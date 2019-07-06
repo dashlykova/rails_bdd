@@ -1,13 +1,13 @@
 Given("I visit the {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+    visit root_path
   end
   
-  When("I click {string} link") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+  Given("I click {string}") do |element|
+    click_on element
   end
   
-  When("I fill in {string} with {string}") do |string, string2|
-    pending # Write code here that turns the phrase above into concrete actions
+  When("I fill in {string} with {string}") do |field, content|
+    fill_in field with:content
   end
   
   When("I click {string} button") do |string|
