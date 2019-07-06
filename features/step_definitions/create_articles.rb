@@ -7,7 +7,7 @@ Given("I visit the {string} page") do |string|
   end
   
   When("I fill in {string} with {string}") do |field, content|
-    fill_in field with:content
+    fill_in field, with:content
   end
   
   When("I click {string} button") do |string|
