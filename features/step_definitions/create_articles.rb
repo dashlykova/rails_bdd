@@ -1,6 +1,6 @@
 Given("I visit the {string} page") do |string|
-    visit root_path
-  end
+  visit root_path
+end
   
   Given("I click {string}") do |element|
     click_on element
@@ -14,6 +14,7 @@ Given("I visit the {string} page") do |string|
     click_on create_article
   end
   
-  Then("I should be on {string} page") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+  Then("I should be on {string} page") do |page|
+    article = Article.find_by(title: page)
+    expect(current_path).to eq articles_path(article)
   end
