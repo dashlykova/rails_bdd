@@ -28,6 +28,6 @@ When("I click {string} button") do |button|
 end
   
   
-When("I click {string} link") do |edit_link|
-    click_on edit_link
+When("I click {string} link") do |edit|
+    click_on edit
 end

@@ -10,13 +10,13 @@ Feature: Edit articles
       | A breaking news item | Some really breaking action      |
       | Learn Rails 5        | Build awesome rails applications |
 
-  Scenario: View list of articles on the landing page
+  Scenario: Edit an article
     When I visit the site
     When I click "Edit" link
-    When I fill in "Title" with "Edit feature"
-    And I fill in "Content" with "Testing editing feature"
+    When I fill in "Title" with "David Bowie"
+    And I fill in "Content" with "Heroes"
     And I click "Update Article"
-    Then I should be on "Edit feature" page
+    Then I should be on "David Bowie" page
     And I should see "Article was successfully created."
-    And I should see "Edit feature"
-    And I should see "Testing editing feature"
+    And I should see "David Bowie"
+    And I should see "Heroes"
