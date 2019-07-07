@@ -15,11 +15,18 @@
     </div>
   <% end %>
     
+    <p>
      <%= form.label :title %>
      <%= form.text_field :title, placeholder: 'Title' %>
-    
+    </p>
+
+    <p>
      <%= form.label :content %>
      <%= form.text_field :content, placeholder: 'Content' %>
-    <%= form.submit value: "Create Article"%>
+    </p> 
+
+    <p>
+     <%= form.submit value: "Create Article"%>
+    </p>
 
 <% end %>
