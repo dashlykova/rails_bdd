@@ -1,5 +1,5 @@
 
-<%= form_with model: @article, url: article_path, local: true do |form| %>
+<%= form_with model: @article, url: articles_path, local: true do |form| %>
 
     <% if @article.errors.any? %>
     <div id="error_explanation">
@@ -30,3 +30,5 @@
     </p>
 
 <% end %>
+
+<%= link_to 'Back', articles_path %>
