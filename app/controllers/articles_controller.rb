@@ -11,14 +11,16 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
-    @article = Article.create(article_params)
-    if @article.persisted?
-      flash[:notice] = 'Article was successfully posted.'
-      redirect_to article_path
+    @article = Article.new(article_params)
+    if @article.save
+      redirect_to @article
     else
-      flash[:alert] = @article.errors.full_messages.to_sentence
-      render :new
+      render 'new'
     end
   end
 
