@@ -3,18 +3,26 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
   
-  def new; end
+  def show
+    @article = Article.find(params[:id])
+  end
+ 
+  def new
+    @article = Article.new
+  end
 
   def create
     @article = Article.create(article_params)
     if @article.persisted?
       flash[:notice] = 'Article was successfully posted.'
-      redirect_to articles_path
+      redirect_to article_path
     else
       flash[:alert] = @article.errors.full_messages.to_sentence
-      render 'new'
+      render :new
     end
   end
+
+  
 
   private
 
