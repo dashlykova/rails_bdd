@@ -12,7 +12,7 @@ Feature: Edit articles
 
   Scenario: View list of articles on the landing page
     When I visit the site
-    When I click "Edit"
+    When I click "Edit" link
     When I fill in "Title" with "Edit feature"
     And I fill in "Content" with "Testing editing feature"
     And I click "Update Article"

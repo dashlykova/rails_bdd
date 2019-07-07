@@ -6,13 +6,14 @@ Given("the following articles exists") do |table|
     end
 end
 
+Given("I click {string}") do |string|
+    click_on string
+end    
+
 When("I visit the {string} page") do |string|
     visit root_path
-  end
-
-When("I click {string}") do |string|
-    click_on string
 end
+
 
 When("I visit the site") do 
     visit root_path
@@ -27,6 +28,6 @@ When("I click {string} button") do |button|
 end
   
   
-# When("I click on {string} link") do |link|
-#     click_on link
-# end
+When("I click {string} link") do |edit_link|
+    click_on edit_link
+end
