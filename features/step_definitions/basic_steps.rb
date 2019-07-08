@@ -34,3 +34,7 @@ end
 # When("I click {string} link") do |link|
 #     click_on link
 # end
+
+When("show me the page") do
+    save_and_open_page
+end
