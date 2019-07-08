@@ -26,8 +26,11 @@ end
 When("I click {string} button") do |button|
     click_on button
 end
-  
-  
+
 When("I click {string} link") do |link|
-    click_on link
+    click_on link 
 end
+  
+# When("I click {string} link") do |link|
+#     click_on link
+# end
