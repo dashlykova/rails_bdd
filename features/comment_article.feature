@@ -18,6 +18,6 @@ Feature: Comment on article
     And I fill in "comment[email]" with "david@bowie.com"
     And I fill in "comment[body]" with "I don't know where I'm going from here, but I promise it won't be boring."
     And I click "Create Comment"
-    Then I should be on "New comment" page
-    And I should see "Visitor: David Bowie"
+    Then I should see "Your comment has been posted!"
+    And I should see "Commenter: David Bowie"
     And I should see "Comment: I don't know where I'm going from here, but I promise it won't be boring."
