@@ -19,8 +19,12 @@ When("I visit the site") do
     visit root_path
 end
 
-When("I fill in {string} with {string}") do |field, content|  
-    fill_in field, with: content
+# When("I fill in {string} with {string}") do |field, content|  
+#     fill_in field, with: content
+# end
+
+When("I fill in {string} with {string}") do |field, data|
+    fill_in field, with: data
 end
   
 When("I click {string} button") do |button|

@@ -13,9 +13,10 @@ Feature: Comment on article
   Scenario: Visitor can comment on articles
     When I visit the site
     When I click "Show" link
-    Then I should see "Add Comment:"
-    And I fill in "Commenter:" with "David Bowie"
-    And I fill in "Body:" with "I don't know where I'm going from here, but I promise it won't be boring."
+    Then I should see "Add Comment"
+    And I fill in "comment[commenter]" with "David Bowie"
+    And I fill in "comment[email]" with "david@bowie.com"
+    And I fill in "comment[body]" with "I don't know where I'm going from here, but I promise it won't be boring."
     And I click "Create Comment"
     Then I should be on "New comment" page
     And I should see "Visitor: David Bowie"
