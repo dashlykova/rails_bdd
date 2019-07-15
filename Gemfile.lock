@@ -255,7 +255,9 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   cucumber-rails
   database_cleaner
+
   devise
+
   factory_bot_rails
   jbuilder (~> 2.5)
   launchy
