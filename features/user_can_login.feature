@@ -8,7 +8,7 @@ Feature: User can login
             | email           | password |
             | david@bowie.com | password |
         And I visit the site
-        And I click "Login"
+        And I click "Log in"
 
     Scenario: User can login successfully
         When I fill in "Email" with "david@bowie.com"
