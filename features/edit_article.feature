@@ -5,12 +5,17 @@ Feature: Edit articles
 
   Background:
     Given I visit the "landing" page
-    Given the following articles exists
+    Given I fill in "Email" with "david@bowie.com"
+    And I fill in "Password" with "password"
+    And I click "Log in"
+    And the following articles exist
       | title                | content                          |
       | A breaking news item | Some really breaking action      |
+    # Then I should see "Signed in successfully."
+    
 
   Scenario: Edit an article
-    When I visit the site
+    When I should see "Signed in successfully."
     And I click "Edit" link
     And show me the page
     And I fill in "Title" with "David Bowie"
