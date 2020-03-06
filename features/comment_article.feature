@@ -5,10 +5,14 @@ Feature: Comment on article
 
   Background:
     Given I visit the "landing" page
-    Given the following articles exists
+    Given I fill in "Email" with "david@bowie.com"
+    And I fill in "Password" with "password"
+    And I click "Log in"
+    And the following articles exist
       | title                | content                          |
       | A breaking news item | Some really breaking action      |
-      | Learn Rails 5        | Build awesome rails applications |
+      | Learning Rails 5     | Rails is awesome                 |
+    Then I should see "Signed in successfully."
 
   Scenario: Visitor can comment on articles
     When I visit the site

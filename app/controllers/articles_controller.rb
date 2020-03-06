@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
+  
+
   def index
     @articles = Article.all
   end
@@ -8,7 +11,7 @@ class ArticlesController < ApplicationController
   end
  
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def edit
@@ -16,7 +19,7 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.build(article_params)
 
     if @article.save
       flash[:notice] = 'Article was successfully created.'

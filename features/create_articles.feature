@@ -5,10 +5,16 @@ Feature: Create articles
 
   Background:
     Given I visit the "landing" page
-    And I click "New Article"
+    Then I should see "You need to sign in or sign up before continuing."
+    And I should see "Log in"
+    And I fill in "Email" with "david@bowie.com"
+    And I fill in "Password" with "password"
+    And I click "Log in"
 
   Scenario: Successfully create an article [Happy Path]
-    When I fill in "Title" with "Learning Rails 5"
+    When I visit the site
+    And I click "New Article" 
+    And I fill in "Title" with "Learning Rails 5"
     And I fill in "Content" with "Excited about learning a new framework"
     And I click "Create Article"
     Then I should be on "Learning Rails 5" page
@@ -17,6 +23,8 @@ Feature: Create articles
     And I should see "Excited about learning a new framework"
 
   Scenario: Publisher doesn't enter a title for the article [Sad Path]
-    When I fill in "Content" with "Excited about learning a new framework"
+    When I click "New Article" 
+    And I fill in "Title" with "Learning Rails 5"
+    And I fill in "Content" with "Excited about learning a new framework"
     And I click "Create Article" button
     Then I should see "Title can't be blank"
